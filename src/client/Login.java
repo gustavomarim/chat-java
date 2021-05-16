@@ -33,7 +33,6 @@ public class Login extends JFrame {
 		start();
 	}
 
-	// Inicialização de componentes
 	private void initComponents() {
 		jb_login = new JButton("Entrar");
 		jl_user = new JLabel("Apelido", SwingConstants.CENTER); // Centraliza o Label
@@ -57,7 +56,7 @@ public class Login extends JFrame {
 
 		jb_login.setBounds(10, 220, 375, 40);
 		jb_login.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		
+
 		jl_user.setBounds(10, 120, 100, 40);
 		jl_user.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
 
@@ -71,7 +70,6 @@ public class Login extends JFrame {
 
 	}
 
-	// Inserindo Componentes no Frame
 	private void insertComponents() {
 		this.add(jb_login);
 		this.add(jl_user);

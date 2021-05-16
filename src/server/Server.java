@@ -9,8 +9,10 @@ import common.Utils;
 public class Server {
 
 	// Local Host padrão
-	public static final String HOST = "127.0.0.1";
-	public static final int PORT = 4444; // Para hostear p/ fora, utilizar ip da máquina
+	public static final String HOST = "127.0.0.1"; // IP fixo
+	public static final int PORT = 4444; // Porta fixa
+
+	// ADENDO: Para hostear p/ fora, utilizar ip da máquina
 
 	private ServerSocket server;
 	private Map<String, ClientListener> clients;
@@ -24,7 +26,7 @@ public class Server {
 			System.out.println("Servidor Iniciado no host: " + HOST + " e porta: " + PORT);
 			while (true) {
 				// Aceitando conexão vinda do servidor
-				Socket connection = server.accept(); // aceita conexão vinda de alguém
+				Socket connection = server.accept(); // aceita conexão vinda de um usuário online
 				// Recebe as mensagens da classe Utils
 				connection_info = Utils.receivedMessage(connection);
 				if (checkLogin(connection_info)) {
@@ -47,7 +49,7 @@ public class Server {
 
 	private boolean checkLogin(String connection_info) {
 		String[] splited = connection_info.split(":");
-		// tratando o erro de mesmo login e porta entre usuários
+		// tratando o erro de apelidos e portas iguais
 		for (Map.Entry<String, ClientListener> pair : clients.entrySet()) {
 			String[] parts = pair.getKey().split(":");
 			if (parts[0].toLowerCase().equals(splited[0].toLowerCase())) {

@@ -35,11 +35,10 @@ public class Chat extends JFrame {
 
 	private Home home;
 	private Socket connection;
-	private ArrayList<String> message_list; // Array comportará as mensagens
+	private ArrayList<String> message_list; // Array p/ comportar mensagens
 	private String connection_info;
 
-	// connection_info => informação de quem estou conectado;
-	// title => Título do usuário do chat
+	// connection_info => informação de com quem estou conectado;
 	public Chat(Home home, Socket connection, String connection_info, String title) {
 		super(title);
 		this.home = home;
@@ -55,7 +54,9 @@ public class Chat extends JFrame {
 
 	private void initComponents() {
 		message_list = new ArrayList<String>();
-		jl_title = new JLabel("< " + this.getTitle() + " > está conversando com < "+connection_info.split(":")[0] + " >", SwingConstants.CENTER);
+		jl_title = new JLabel(
+				"< " + this.getTitle() + " > está conversando com < " + connection_info.split(":")[0] + " >",
+				SwingConstants.CENTER);
 		messages = new JEditorPane();
 		scroll = new JScrollPane(messages);
 		jt_message = new JTextField();
@@ -69,16 +70,14 @@ public class Chat extends JFrame {
 		this.setLayout(new BorderLayout());
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		messages.setContentType("text/html");
-		messages.setEditable(false); // torna mensagens não editáveis
+		messages.setEditable(false); // torna as mensagens não editáveis
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		jb_message.setSize(100, 40);
 
 	}
 
-	// Inserindo Componentes no Frame
 	private void insertComponents() {
-		// Setando as coordernadas dos componentes
 		this.add(jl_title, BorderLayout.NORTH);
 		this.add(scroll, BorderLayout.CENTER);
 		this.add(panel, BorderLayout.SOUTH);
@@ -93,12 +92,14 @@ public class Chat extends JFrame {
 		jt_message.addKeyListener(new KeyListener() {
 
 			@Override
-			public void keyTyped(KeyEvent e) {}
+			public void keyTyped(KeyEvent e) {
+			}
 
 			@Override
-			public void keyReleased(KeyEvent e) {}
+			public void keyReleased(KeyEvent e) {
+			}
 
-			// add evento de clique do Enter p/ enviar mensagem
+			// add evento de clique do 'Enter' p/ enviar mensagem
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyChar() == KeyEvent.VK_ENTER) {
@@ -106,22 +107,26 @@ public class Chat extends JFrame {
 				}
 			}
 		});
-		
+
 		// Sequência de ações de janela para o encerramento do chat
 		this.addWindowListener(new WindowListener() {
-			
+
 			@Override
-			public void windowOpened(WindowEvent e) {}
-			
+			public void windowOpened(WindowEvent e) {
+			}
+
 			@Override
-			public void windowIconified(WindowEvent e) {}
-			
+			public void windowIconified(WindowEvent e) {
+			}
+
 			@Override
-			public void windowDeiconified(WindowEvent e) {}
-			
+			public void windowDeiconified(WindowEvent e) {
+			}
+
 			@Override
-			public void windowDeactivated(WindowEvent e) {}
-			
+			public void windowDeactivated(WindowEvent e) {
+			}
+
 			@Override
 			public void windowClosing(WindowEvent e) {
 				Utils.sendMessage(connection, "CHAT_CLOSE");
@@ -130,13 +135,15 @@ public class Chat extends JFrame {
 				home.getConnected_listeners().get(connection_info).setRunning(false); // listenner removido
 				home.getConnected_listeners().remove(connection_info); // remove da lista de escutas
 			}
-			
+
 			@Override
-			public void windowClosed(WindowEvent e) {}
-			
+			public void windowClosed(WindowEvent e) {
+			}
+
 			@Override
-			public void windowActivated(WindowEvent e) {}
-			
+			public void windowActivated(WindowEvent e) {
+			}
+
 		});
 	}
 
@@ -150,14 +157,13 @@ public class Chat extends JFrame {
 		messages.setText(message);
 	}
 
-	// Envio de mensagem feito pelo ladoda interface.
+	// Envio de mensagem feito pelo lado da interface.
 	private void send() {
 		if (jt_message.getText().length() > 0) {
 			DateFormat df = new SimpleDateFormat("hh:mm:ss");
-			Utils.sendMessage(connection, "MESSAGE;" + "<b>[" + df.format(new Date()) +
-					"] " + this.getTitle() + ": </b><i> " + jt_message.getText() + "</i><br>");
-			append_message("<b>[" + df.format(new Date()) + "] Eu: </b></i> "
-					+ jt_message.getText() + "</i><br>");
+			Utils.sendMessage(connection, "MESSAGE;" + "<b>[" + df.format(new Date()) + "] " + this.getTitle()
+					+ ": </b><i> " + jt_message.getText() + "</i><br>");
+			append_message("<b>[" + df.format(new Date()) + "] Eu: </b></i> " + jt_message.getText() + "</i><br>");
 			jt_message.setText("");
 		}
 	}

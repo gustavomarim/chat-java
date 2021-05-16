@@ -27,14 +27,14 @@ public class ClientListener implements Runnable {
 		this.running = running;
 	}
 
-	// Thread
+	// Inicialização da Thread
 	public void run() {
 		running = true;
 		String message;
 		while (running) {
 			message = Utils.receivedMessage(connection);
 			if (message.equals("QUIT")) {
-				// Quando fecha app, server remove o user da lista de contatos
+				// Quando fecha a aplicação, o server remove o user da lista de contatos
 				server.getClients().remove(connection_info);
 				try {
 					connection.close();

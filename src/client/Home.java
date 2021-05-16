@@ -19,14 +19,13 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
-import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
 
 import common.Utils;
 
 @SuppressWarnings("serial")
 public class Home extends JFrame {
 
-	private ArrayList<String> opened_chats; // Chats abertos
+	private ArrayList<String> opened_chats; // Array p/ comportar os chats abertos
 	private Map<String, ClientListener> connected_listeners; // ref. p/ todos os clientsListeners dos chats abertos
 	private ArrayList<String> connected_users;
 	private String connection_info;
@@ -40,7 +39,6 @@ public class Home extends JFrame {
 	private JList<Object> jlist;
 	private JScrollPane scroll;
 
-	// Faz a comparação de strings ao apertar o botão entrar
 	public Home(Socket connection, String connection_info) {
 		super("Chat - Home");
 		this.connection = connection;
@@ -58,9 +56,8 @@ public class Home extends JFrame {
 		connected_listeners = new HashMap<String, ClientListener>();
 		opened_chats = new ArrayList<String>();
 		connected_users = new ArrayList<String>();
-		jl_title = new JLabel("< Usuário : " + connection_info.split(":")[0] + " >", SwingConstants.CENTER);// faz a separação da string pelo caractere ":", 
-		
-		//começando pela primeira letra e centraliza o label
+		jl_title = new JLabel("< Usuário : " + connection_info.split(":")[0] + " >", SwingConstants.CENTER);// faz aseparação das strings utilizando 
+		//o caractere > ; < , começando pela primeira letra e centralizando o label
 		jb_get_connected = new JButton("Atualizar Contatos");
 		jb_start_talk = new JButton("Abrir Conversa");
 		jlist = new JList<>();
@@ -70,18 +67,18 @@ public class Home extends JFrame {
 	private void configComponents() {
 		this.setLayout(null);
 		this.setMinimumSize(new Dimension(610, 500));
-		this.setResizable(false); // não redimensionável
+		this.setResizable(false); // torna a janela não redimensionável
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().setBackground(Color.WHITE);
-		this.setLocationRelativeTo(null); // Inicia o Conteiner no meio da tela
+		this.setLocationRelativeTo(null); // Inicia o Container no centro da tela
 
 		// Largura e cor da borda
 		jl_title.setBounds(10, 10, 370, 40);
 		jl_title.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-		
+
 		jb_get_connected.setBounds(400, 10, 180, 40);
 		jb_get_connected.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		jb_get_connected.setFocusable(false); // desabilita o foco do botão
+		jb_get_connected.setFocusable(false); // desabilita o foco do botï¿½o
 
 		jb_start_talk.setBounds(10, 400, 573, 40);
 		jb_start_talk.setBorder(BorderFactory.createLineBorder(Color.BLUE));
@@ -92,7 +89,9 @@ public class Home extends JFrame {
 		jlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		scroll.setBounds(10, 60, 575, 335);
-		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); // seta a barra lateral apenas quando necessário
+		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); // seta a barra lateral apenas
+																						// quando necessário
+
 		scroll.setBorder(null);
 
 	}
@@ -110,16 +109,20 @@ public class Home extends JFrame {
 		this.addWindowListener(new WindowListener() {
 
 			@Override
-			public void windowOpened(WindowEvent e) {}
+			public void windowOpened(WindowEvent e) {
+			}
 
 			@Override
-			public void windowIconified(WindowEvent e) {}
+			public void windowIconified(WindowEvent e) {
+			}
 
 			@Override
-			public void windowDeiconified(WindowEvent e) {}
+			public void windowDeiconified(WindowEvent e) {
+			}
 
 			@Override
-			public void windowDeactivated(WindowEvent e) {}
+			public void windowDeactivated(WindowEvent e) {
+			}
 
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -129,10 +132,12 @@ public class Home extends JFrame {
 			}
 
 			@Override
-			public void windowClosed(WindowEvent e) {}
+			public void windowClosed(WindowEvent e) {
+			}
 
 			@Override
-			public void windowActivated(WindowEvent e) {}
+			public void windowActivated(WindowEvent e) {
+			}
 		});
 
 		jb_get_connected.addActionListener(event -> getConnectedUsers());
@@ -182,14 +187,15 @@ public class Home extends JFrame {
 	public String getConnection_info() {
 		return connection_info;
 	}
-	
-	// Caso não haja nenhum chat aberto, será instanciado um novo e suas infos (ip, usuário) serão inseridas em um array
+
+	// Caso não haja nenhum chat aberto, será instanciado um novo chat e suas infos
+	// (ip, usuário) serão inseridas em um array
 	private void openChat() {
 		int index = jlist.getSelectedIndex();
-		if(index != -1) {
+		if (index != -1) {
 			String connection_info = jlist.getSelectedValue().toString();
 			String[] splited = connection_info.split(":");
-			if(!opened_chats.contains(connection_info)) {
+			if (!opened_chats.contains(connection_info)) {
 				try {
 					Socket connection = new Socket(splited[1], Integer.parseInt(splited[2]));
 					Utils.sendMessage(connection, "OPEN_CHAT;" + this.connection_info);
@@ -204,19 +210,20 @@ public class Home extends JFrame {
 				}
 			}
 		}
-		
+
 	}
-		
-	// Rodando o chat em uma Thread. Dessa forma vários chats podem conversar ao mesmo tempo
+
+	// Rodando o chat em uma Thread. Dessa forma múltiplos chats podem conversar
+	// simultâneamente
 	private void startServer(Home home, int port) {
-		new Thread(){
+		new Thread() {
 			@Override
 			public void run() {
 				running = true;
 				try {
 					server = new ServerSocket(port);
 					System.out.println("Servidor cliente iniciado na porta: " + port + "...");
-					while(running) {
+					while (running) {
 						Socket connection = server.accept();
 						ClientListener cl = new ClientListener(home, connection);
 						new Thread(cl).start();
@@ -227,5 +234,5 @@ public class Home extends JFrame {
 			}
 		}.start();
 	}
-	
+
 }
