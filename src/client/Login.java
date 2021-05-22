@@ -67,7 +67,6 @@ public class Login extends JFrame {
 		jt_user.setBorder(BorderFactory.createLineBorder(Color.GREEN));
 		jt_port.setBounds(120, 170, 265, 40);
 		jt_port.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
-
 	}
 
 	private void insertComponents() {
@@ -108,5 +107,4 @@ public class Login extends JFrame {
 		this.pack();
 		this.setVisible(true);
 	}
-
 }
