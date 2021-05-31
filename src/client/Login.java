@@ -95,10 +95,10 @@ public class Login extends JFrame {
 					this.dispose();
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Algum usuário já está conectado com este apelido ou nesse host e porta. Tente outra porta");
+							"Algum usuário ja está conectado com este apelido ou nesse host e porta. Tente outra porta");
 				}
 			} catch (IOException e) {
-				JOptionPane.showMessageDialog(null, "Erro ao conectar. Verifique se o servidor está em execução!");
+				JOptionPane.showMessageDialog(null, "Erro ao conectar. Verifique se o servidor estï¿½ em execuÃ§Ã£o!");
 			}
 		});
 	}

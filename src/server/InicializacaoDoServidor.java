@@ -9,7 +9,6 @@ public class InicializacaoDoServidor {
 
 		Login login = new Login();
 		Login login2 = new Login();
-		Login login3 = new Login();
 
 		Server server = new Server();
 	}

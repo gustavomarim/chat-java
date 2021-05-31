@@ -96,5 +96,4 @@ public class ClientListener implements Runnable {
 			System.out.println(">> Mensagem: " + message);
 		}
 	}
-
 }

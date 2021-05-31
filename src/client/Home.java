@@ -56,18 +56,18 @@ public class Home extends JFrame {
 		connected_listeners = new HashMap<String, ClientListener>();
 		opened_chats = new ArrayList<String>();
 		connected_users = new ArrayList<String>();
-		jl_title = new JLabel("< Usuário : " + connection_info.split(":")[0] + " >", SwingConstants.CENTER);// faz aseparação das strings utilizando 
-		//o caractere > ; < , começando pela primeira letra e centralizando o label
+		jl_title = new JLabel("< Usuário : " + connection_info.split(":")[0] + " >", SwingConstants.CENTER);// faz a separaçãoo das strings utilizando 
+		// o caractere > ; < , começando pela primeira letra e centralizando o label
 		jb_get_connected = new JButton("Atualizar Contatos");
 		jb_start_talk = new JButton("Abrir Conversa");
 		jlist = new JList<>();
-		scroll = new JScrollPane(jlist); // Scroll recebe a lista de usuários
+		scroll = new JScrollPane(jlist); // Scroll recebe a lista de usuarios
 	}
 
 	private void configComponents() {
 		this.setLayout(null);
 		this.setMinimumSize(new Dimension(610, 500));
-		this.setResizable(false); // torna a janela não redimensionável
+		this.setResizable(false); // torna a janela nÃ£o redimensionÃ¡vel
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().setBackground(Color.WHITE);
 		this.setLocationRelativeTo(null); // Inicia o Container no centro da tela
@@ -78,7 +78,7 @@ public class Home extends JFrame {
 
 		jb_get_connected.setBounds(400, 10, 180, 40);
 		jb_get_connected.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		jb_get_connected.setFocusable(false); // desabilita o foco do botï¿½o
+		jb_get_connected.setFocusable(false); // desabilita o foco do botÃ£o
 
 		jb_start_talk.setBounds(10, 400, 573, 40);
 		jb_start_talk.setBorder(BorderFactory.createLineBorder(Color.BLUE));
@@ -91,9 +91,7 @@ public class Home extends JFrame {
 		scroll.setBounds(10, 60, 575, 335);
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); // seta a barra lateral apenas
 																						// quando necessário
-
 		scroll.setBorder(null);
-
 	}
 
 	// Inserindo Componentes no Frame
@@ -107,42 +105,33 @@ public class Home extends JFrame {
 	private void insertActions() {
 		// Ação p/ remover o erro que aparece ao fechar conexão
 		this.addWindowListener(new WindowListener() {
-
 			@Override
 			public void windowOpened(WindowEvent e) {
 			}
-
 			@Override
 			public void windowIconified(WindowEvent e) {
 			}
-
 			@Override
 			public void windowDeiconified(WindowEvent e) {
 			}
-
 			@Override
 			public void windowDeactivated(WindowEvent e) {
 			}
-
 			@Override
 			public void windowClosing(WindowEvent e) {
 				running = false;
 				Utils.sendMessage(connection, "QUIT");
 				System.out.println("> Conexão encerrada.");
 			}
-
 			@Override
 			public void windowClosed(WindowEvent e) {
 			}
-
 			@Override
 			public void windowActivated(WindowEvent e) {
 			}
 		});
-
 		jb_get_connected.addActionListener(event -> getConnectedUsers());
 		jb_start_talk.addActionListener(event -> openChat());
-
 	}
 
 	private void start() {
@@ -210,7 +199,6 @@ public class Home extends JFrame {
 				}
 			}
 		}
-
 	}
 
 	// Rodando o chat em uma Thread. Dessa forma múltiplos chats podem conversar
@@ -234,5 +222,4 @@ public class Home extends JFrame {
 			}
 		}.start();
 	}
-
 }

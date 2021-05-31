@@ -11,9 +11,7 @@ public class Server {
 	// Local Host padrão
 	public static final String HOST = "127.0.0.1"; // IP fixo
 	public static final int PORT = 4444; // Porta fixa
-
 	// ADENDO: Para hostear p/ fora, utilizar ip da máquina
-
 	private ServerSocket server;
 	private Map<String, ClientListener> clients;
 
@@ -60,5 +58,4 @@ public class Server {
 		}
 		return true;
 	}
-
 }

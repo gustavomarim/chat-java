@@ -8,9 +8,8 @@ import java.net.Socket;
 public class Utils {
 
 	public static boolean sendMessage(Socket connection, String message) {
-
 		try {
-			// Saída de mensagem
+			// Saida de mensagem
 			ObjectOutputStream output = new ObjectOutputStream(connection.getOutputStream());
 			output.flush();
 			// escreve a mensagem do objeto
@@ -18,13 +17,11 @@ public class Utils {
 		} catch (IOException e) {
 			System.err.println("[ERROR:sendMessage] -> " + e.getMessage());
 		}
-
 		return false;
 	}
 
 	public static String receivedMessage(Socket connection) {
 		String response = null;
-
 		try {
 			// Lendo conexão
 			ObjectInputStream input = new ObjectInputStream(connection.getInputStream());
@@ -35,5 +32,4 @@ public class Utils {
 		}
 		return response;
 	}
-
 }

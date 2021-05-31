@@ -49,7 +49,6 @@ public class Chat extends JFrame {
 		insertComponents();
 		insertActions();
 		start();
-
 	}
 
 	private void initComponents() {
@@ -62,7 +61,6 @@ public class Chat extends JFrame {
 		jt_message = new JTextField();
 		jb_message = new JButton("Enviar");
 		panel = new JPanel(new BorderLayout());
-
 	}
 
 	private void configComponents() {
@@ -74,7 +72,6 @@ public class Chat extends JFrame {
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		jb_message.setSize(100, 40);
-
 	}
 
 	private void insertComponents() {
@@ -83,10 +80,9 @@ public class Chat extends JFrame {
 		this.add(panel, BorderLayout.SOUTH);
 		panel.add(jt_message, BorderLayout.CENTER);
 		panel.add(jb_message, BorderLayout.EAST);
-
 	}
 
-	// Inserção de comando de teclado para envio de mensagens
+	// Inserindoo de comando de teclado para envio de mensagens
 	private void insertActions() {
 		jb_message.addActionListener(event -> send());
 		jt_message.addKeyListener(new KeyListener() {
@@ -110,23 +106,18 @@ public class Chat extends JFrame {
 
 		// Sequência de ações de janela para o encerramento do chat
 		this.addWindowListener(new WindowListener() {
-
 			@Override
 			public void windowOpened(WindowEvent e) {
 			}
-
 			@Override
 			public void windowIconified(WindowEvent e) {
 			}
-
 			@Override
 			public void windowDeiconified(WindowEvent e) {
 			}
-
 			@Override
 			public void windowDeactivated(WindowEvent e) {
 			}
-
 			@Override
 			public void windowClosing(WindowEvent e) {
 				Utils.sendMessage(connection, "CHAT_CLOSE");
@@ -135,15 +126,12 @@ public class Chat extends JFrame {
 				home.getConnected_listeners().get(connection_info).setRunning(false); // listenner removido
 				home.getConnected_listeners().remove(connection_info); // remove da lista de escutas
 			}
-
 			@Override
 			public void windowClosed(WindowEvent e) {
 			}
-
 			@Override
 			public void windowActivated(WindowEvent e) {
 			}
-
 		});
 	}
 
@@ -172,5 +160,4 @@ public class Chat extends JFrame {
 		this.pack();
 		this.setVisible(true);
 	}
-
 }
