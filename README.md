@@ -12,7 +12,7 @@
 </p>
 <hr>
 
-<h4 id="status">🚧 Chat Java 🚀 em construção... 🚧</h4>
+<h4 id="status" align="center">🚧 Chat Java 🚀 em construção... 🚧</h4>
 <p>Projeto de Atividade Prática Supervisionada apresentado à faculdade com o intuito de demonstrar a comunicação entre duas ou mais pessoas utilizando os protocolos TCP/IP.
 </p><hr>
 
