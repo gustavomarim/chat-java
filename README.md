@@ -8,6 +8,7 @@
  <a href="#screenShots">Screen Shots</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#mencaoHonrosa">Menção Honrosa</a> • 
+ <a href="#licença">Licença</a> • 
  <a href="#autor">Autor</a>
 </p>
 <hr>
@@ -42,6 +43,10 @@ Ferramentas utilizadas na construção do projeto:
 
 
 <hr>
+<h3 id="licença">Licença</h3>
+
+ <hr>
 
 <h4 id="autor">Autor</h4>
-@GustavoDantasMarim
+
+[@gustavomarim](https://github.com/gustavomarim)
