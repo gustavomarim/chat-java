@@ -7,7 +7,7 @@
  <a href="#funcionalidades">Funcionalidades</a> • 
  <a href="#screenShots">Screen Shots</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#mencaoHonrosa">Menção Honrosa</a> • 
+ <a href="#contribuidores">Contribuidores</a> • 
  <a href="#licença">Licença</a> • 
  <a href="#autor">Autor</a>
 </p>
@@ -39,7 +39,7 @@ Ferramentas utilizadas na construção do projeto:
 * [Java](https://www.java.com/pt-BR/)<br>
 <hr>
 
-<h3 id="mencaoHonrosa"> Menção Honrosa</h3>
+<h3 id="contribuidores">Contribuidores</h3>
 
 
 
