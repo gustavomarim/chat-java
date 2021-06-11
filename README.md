@@ -7,9 +7,9 @@
  <a href="#funcionalidades">Funcionalidades</a> • 
  <a href="#screenShots">Screen Shots</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuidores">Contribuidores</a> • 
- <a href="#licença">Licença</a> • 
- <a href="#autor">Autor</a>
+ <a href="#contribuidores">Contribuidores</a>  
+ <a href="#autor">Autor</a> •
+ <a href="#licença">Licença</a> 
 </p>
 <hr>
 
@@ -42,13 +42,22 @@ Ferramentas utilizadas na construção do projeto:
 <h3 id="contribuidores">Contribuidores</h3>
 
 
-
-
-<hr>
-<h3 id="licença">Licença</h3>
-
  <hr>
 
 <h4 id="autor">Autor</h4>
 
-[@gustavomarim](https://github.com/gustavomarim)
+
+<a href="https://github.com/gustavomarim">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/66189039?s=400&u=491817b0d3a8d48be60c450631a950c9d49154b2&v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Gustavo Dantas</b></sub></a> <a href="https://github.com/gustavomarim" title="GitHub">🚀</a>
+
+
+Feito com ❤️ por Gustavo Dantas 👋🏽
+
+ [![Linkedin Badge](https://img.shields.io/badge/-Gustavo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/gustavodantasmarim/) 
+ [![Outlook Badge](https://img.shields.io/badge/-gustavo.dantas.marim@outlook.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:gustavo.dantas.marim@outlook.com)](mailto:gustavo.dantas.marim@outlook.com)
+ 
+ 
+<hr>
+<h3 id="licença">Licença</h3>
