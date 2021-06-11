@@ -61,3 +61,5 @@ Feito com ❤️ por Gustavo Dantas 👋🏽
  
 <hr>
 <h3 id="licença">Licença</h3>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
