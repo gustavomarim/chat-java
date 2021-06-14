@@ -7,7 +7,7 @@
  <a href="#funcionalidades">Funcionalidades</a> • 
  <a href="#screenShots">Screen Shots</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuidores">Contribuidores</a>  
+ <a href="#contribuidores">Contribuidores</a> • 
  <a href="#autor">Autor</a> •
  <a href="#licença">Licença</a> 
 </p>
