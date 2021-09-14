@@ -55,7 +55,6 @@ Ferramentas utilizadas na construção do projeto:
 Feito com ❤️ por Gustavo Dantas 👋🏽
 
  [![Linkedin Badge](https://img.shields.io/badge/-Gustavo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/gustavodantasmarim/) 
- [![Outlook Badge](https://img.shields.io/badge/-gustavo.dantas.marim@outlook.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:gustavo.dantas.marim@outlook.com)](mailto:gustavo.dantas.marim@outlook.com)
  
  
 <hr>
