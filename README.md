@@ -24,7 +24,6 @@
 - [x] Tela Home 
 - [x] Status de Usuários na tela Home
 - [x] Tela Chat
-- [ ] Melhorar aparência do Chat
 <hr>
 
 <h3 id="screenShots">Screen Shots</h3>
