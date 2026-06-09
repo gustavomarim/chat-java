@@ -52,7 +52,7 @@ Ferramentas utilizadas na construção do projeto:
  <sub><b>Gustavo Dantas</b></sub></a> <a href="https://github.com/gustavomarim" title="GitHub">🚀</a>
 
 
-Feito com ❤️ por Gustavo Dantas 👋🏽
+Desenvolvido por Gustavo Dantas 👋🏽
 
  [![Linkedin Badge](https://img.shields.io/badge/-Gustavo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/gustavodantasmarim/) 
  
